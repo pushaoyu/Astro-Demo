@@ -1,5 +1,11 @@
 ---
-const pageTitle = '首页'
+// 引入全局CSS
+import "../styles/global.css";
+// 引入Header组件
+import Header from "../components/Header.astro";
+// 引入Footer组件
+import Footer from "../components/Footer.astro";
+const pageTitle = "首页";
 ---
 
 <!doctype html>
@@ -13,11 +19,7 @@ const pageTitle = '首页'
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-		<a href="/">首页</a>
-		<hr />
-		<a href="/about">关于</a>
-		<hr />
-		<a href="/blog">博客</a>
+		<Header />
 
 		<h1>我的 Astro 学习博客</h1>
 		<p>这是我的 Astro 学习笔记</p>
@@ -26,6 +28,20 @@ const pageTitle = '首页'
 			<li><a href="/posts/post-2/">文章2</a></li>
 			<li><a href="/posts/post-3/">文章3</a></li>
 		</ul>
+
+		<Footer />
+
+		<script>
+			// document
+			// 	.querySelector(".hamburger")
+			// 	.addEventListener("click", () => {
+			// 		console.log("点击了");
+			// 		document
+			// 			.querySelector(".nav-links")
+			// 			.classList.toggle("expanded");
+			// 	});
+			import '../scripts/menu.js'
+		</script>
 	</body>
 </html>
 
