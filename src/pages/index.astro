@@ -1,48 +1,13 @@
 ---
-// 引入全局CSS
-import "../styles/global.css";
-// 引入Header组件
-import Header from "../components/Header.astro";
-// 引入Footer组件
-import Footer from "../components/Footer.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "首页";
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-	</head>
-	<body>
-		<Header />
-
-		<h1>我的 Astro 学习博客</h1>
-		<p>这是我的 Astro 学习笔记</p>
-		<ul>
-			<li><a href="/posts/post-1/">文章1</a></li>
-			<li><a href="/posts/post-2/">文章2</a></li>
-			<li><a href="/posts/post-3/">文章3</a></li>
-		</ul>
-
-		<Footer />
-
-		<script>
-			// document
-			// 	.querySelector(".hamburger")
-			// 	.addEventListener("click", () => {
-			// 		console.log("点击了");
-			// 		document
-			// 			.querySelector(".nav-links")
-			// 			.classList.toggle("expanded");
-			// 	});
-			import '../scripts/menu.js'
-		</script>
-	</body>
-</html>
-
-<style></style>
+<BaseLayout pageTitle={pageTitle}>
+	<h2>My awesome blog subtitle</h2>
+	<ul>
+		<li><a href="./posts/post-1/">文章1</a></li>
+		<li><a href="/posts/post-2">文章2</a></li>
+		<li><a href="/posts/post-3">文章3</a></li>
+	</ul>
+</BaseLayout>
